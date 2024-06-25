@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Reports</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg.png');
+            /* Hacker/cybersecurity background image */
+            background-size: cover;
+            background-position: center;
+            color: #00ff00;
+            /* Light green text color */
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            /* Text shadow for better readability */
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Generate Reports</h2>
+    <form action="generateReports" method="post">
+        <label for="reportType">Report Type:</label><br>
+        <select id="reportType" name="reportType">
+            <option value="occupancy">Occupancy Report</option>
+            <option value="feeCollection">Fee Collection Report</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+        <input type="submit" value="Generate Report">
+    </form>
+</body>
+</html>

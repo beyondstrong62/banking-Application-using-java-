@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 0;
+        background-image: url('bg.png'); /* Hacker/cybersecurity background image */
+        background-size: cover;
+        background-position: center;
+        color: #00ff00; /* Light green text color */
+    }
+
+    form {
+        width: 300px;
+        margin: 50px auto;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #00ff00; /* Light green label color */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #00ff00; /* Light green border */
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #00ff00; /* Light green button background */
+        color: #000; /* Black button text color */
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #007f00; /* Dark green hover background */
+    }
+</style>
+<script>
+    function validate() {
+        var uname = document.register.username.value;
+        var pwd = document.register.password.value;
+        var cnfpwd = document.register.confirmpassword.value;
+        
+        if (uname == "") {
+            alert("Username cannot be empty");
+            return false;
+        } else if (pwd == "") {
+            alert("Password cannot be empty");
+            return false;
+        } else if (cnfpwd == "") {
+            alert("Confirm password cannot be empty");
+            return false;
+        } else if (pwd !== cnfpwd) {
+            alert("Confirm password does not match with password");
+            return false;
+        }
+        return true;
+    }
+</script>
+</head>
+<body>
+<form name="register" action="RegisterServlet" method="post" onsubmit="return validate()">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <label for="confirmpassword">Confirm Password</label>
+    <input type="password" id="confirmpassword" name="confirmpassword">
+    <input type="submit" value="Register">
+</form>
+</body>
+</html>
